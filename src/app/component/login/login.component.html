@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script></script>
+    <script
+       src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.0/ui-bootstrap-tpls.min.js"></script>
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h2 class="card-title text-center">Login</h2>
+              <form class="form-signin">
+                <div class="form-label-group">
+                    <label for="inputEmail">Email address</label>
+                   <input type="email" id="inputEmail" class="form-control" [(ngModel)]="username" name="username" placeholder="Email address" required autofocus>
+                </div>
+                <br>
+                <div class="form-label-group">
+                    <label for="inputPassword">Password</label>
+                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password"  placeholder="Password" required>
+                  
+                </div>
+            <br>
+              <div class="form-label-group">
+               
+                <label>{{errormessage}}</label>
+              </div>
+              <br>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="onLoginClick()">Sign in</button>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
