@@ -1,11 +1,18 @@
-<div class="row">
-    <div class="col-6">
-      <h3>Quiz Application</h3>
-    </div>
-    <div class="col-6 text-right">
-      Select Quiz:
-      <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
-        <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
-      </select>
-    </div>
+<!-- <div class="col-6 text-right">
+    Select Quiz:
+    <select [(ngModel)]="quizName" (change)="loadQuiz(quizName)">
+      <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
+    </select>
+  </div> -->
+
+  <div class="col-6 text-right">
+    Select Quiz:
+    <select [(ngModel)]="quizName" (click)="select(quizName)">
+        <option *ngFor="let quiz of quizes">{{quiz.name}}</option>
+    </select>
   </div>
+
+  <div>
+    <button class="btn btn-primary" (click)="goToQuiz();">Start Quiz</button>
+  </div>
+  

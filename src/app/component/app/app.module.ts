@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 
 import { QuizComponent } from '../../quiz/quiz.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import {NavComponent} from './../nav/nav.component';
+
 import {LoginComponent} from '../login/login.component';
 import { Route, RouterModule } from '@angular/router';
 
@@ -22,7 +25,9 @@ const ROUTES: Route[] = [
   declarations: [
     AppComponent,
     QuizComponent,
+    NavComponent,
     LoginComponent,
+
     HomeComponent
   ],
   imports: [
