@@ -7,11 +7,17 @@ import { AppComponent } from './app.component';
 
 import { QuizComponent } from './quiz/quiz.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuizComponent
+    QuizComponent,
+    NavComponent,
+    LoginPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

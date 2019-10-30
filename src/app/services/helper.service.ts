@@ -1,13 +1,25 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class HelperService {
+  
+  quizName = 'None':Observable;
+
   static toBool(val) {
     if (val === undefined || val === null || val === '' || val === 'false' || val === 'False') {
       return false;
     } else {
       return true;
     }
+  }
+
+  setQuizName(quizName){
+    this.quizName = quizName;
+  }
+
+  getQuizName(){
+    return this.quizName;
   }
 
   static shuffle(array) {
