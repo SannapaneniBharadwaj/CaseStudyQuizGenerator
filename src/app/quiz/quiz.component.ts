@@ -8,7 +8,7 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'],
-  providers: [QuizService]
+  providers: []
 })
 export class QuizComponent implements OnInit {
   quizes: any[];
@@ -41,11 +41,15 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService) { }
+  constructor(private quizService: QuizService,private helperService:HelperService) { }
 
   ngOnInit() {
     this.quizes = this.quizService.getAll();
-    this.quizName = this.quizes[0].id;
+    //this.quizName = this.quizes[0].id;
+    this.helperService.quizNameObs.subscribe(data=>{
+      this.quizName = data;
+    })
+    console.log("Quiz Name is "+this.quizName);
     this.loadQuiz(this.quizName);
   }
 

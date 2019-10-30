@@ -13,6 +13,8 @@ import {NavComponent} from './../nav/nav.component';
 
 import {LoginComponent} from '../login/login.component';
 import { Route, RouterModule } from '@angular/router';
+import { HelperService } from 'src/app/services/helper.service';
+import { QuizService } from 'src/app/services/quiz.service';
 
 
 const ROUTES: Route[] = [
@@ -37,7 +39,7 @@ const ROUTES: Route[] = [
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [HelperService,QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
