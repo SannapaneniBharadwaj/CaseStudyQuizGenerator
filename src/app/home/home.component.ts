@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
     this.quizName = quizName;
     //console.log("Selected quizId" + quizId);
     console.log("Selected Quiz Name "+quizName);
-    this.helperService.setQuizName(this.quizName);
 
   }
 
