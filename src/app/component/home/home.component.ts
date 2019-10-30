@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { QuizService } from '../services/quiz.service';
-import { HelperService } from '../services/helper.service';
-import { Option, Question, Quiz, QuizConfig } from '../models/index';
+import { QuizService } from '../../services/quiz.service';
+import { HelperService } from '../../services/helper.service';
+import { Option, Question, Quiz, QuizConfig } from '../../models/index';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   quizName: string;
   quizId: string;
 
-  constructor(private quizService: QuizService,private helperService:HelperService) { }
+  constructor(private quizService: QuizService,private helperService:HelperService,private router: Router) { }
 
   ngOnInit() {
     this.quizes = this.quizService.getAll();
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit {
 
   goToQuiz() {
     console.log("Going to Quiz "+ this.quizName);
+    this.router.navigate(['./quiz']);
     }
   }
 
