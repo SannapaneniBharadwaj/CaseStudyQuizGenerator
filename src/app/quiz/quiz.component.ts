@@ -11,6 +11,8 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
   providers: []
 })
 export class QuizComponent implements OnInit {
+  correct = 0;
+  incorrect = 0;
   quizes: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
@@ -115,6 +117,9 @@ export class QuizComponent implements OnInit {
   onSubmit() {
     let answers = [];
     this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
+
+    // Count the Correct and Incorrect
+    
 
     // Post your data to the server here. answers contains the questionId and the users' answer.
     console.log(this.quiz.questions);
