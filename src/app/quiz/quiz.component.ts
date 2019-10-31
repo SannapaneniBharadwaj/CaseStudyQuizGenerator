@@ -123,12 +123,9 @@ export class QuizComponent implements OnInit {
         this.lastPage=true;
         this.nextButton=false;
       }
-      else if(index==0)
-      {
-        this.prevButton=false;
-      }
       else
       {
+        this.nextButton=true;
         this.lastPage=false;
       }
     }
