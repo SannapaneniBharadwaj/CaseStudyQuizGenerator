@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable,BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,12 @@ export class HelperService {
   
   quizName = 'Default Quiz';
   quizNameObs:BehaviorSubject<string>;
+  loggedUser:BehaviorSubject<string>;
   
   constructor(){
     this.quizNameObs = new BehaviorSubject<string>(this.quizName);
+    this.loggedUser=new BehaviorSubject('defaultuser');
   }
-
 
   setQuizName(quizNName:string){
     //console.log(this.quizName);
@@ -20,7 +21,11 @@ export class HelperService {
     this.quizNameObs = new BehaviorSubject<string>(this.quizName);
     console.log(this.quizName);
   }
-
+  setUserName(uname:string)
+  {
+    this.loggedUser.next(uname);
+    console.log(uname);
+  }
   static toBool(val) {
     if (val === undefined || val === null || val === '' || val === 'false' || val === 'False') {
       return false;

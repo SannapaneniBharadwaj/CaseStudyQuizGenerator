@@ -1,3 +1,4 @@
+import { HelperService } from './../../services/helper.service';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,8 +10,9 @@ import { NavbarService } from '../../services/navbar.service';
     templateUrl: './login.component.html'
 })
 export class LoginComponent {
-    constructor(private router: Router,public nav : NavbarService){
-    }
+    constructor(private router: Router, private helperService: HelperService,public nav : NavbarService){
+   }
+
     username: string;
     password: string;
     errormessage:string;
@@ -25,11 +27,13 @@ export class LoginComponent {
        {
         if(this.username == data[i].email && this.password == data[i].password)
         {
+            this.helperService.setUserName(this.username);
             this.router.navigate(['./home']);
-           // document.getElementById('errormessage').innerHTML = 'Username and password does not match';
+            console.log('xx' +this.username);
+            
             break;
         }
-        else
+        if(i.length<=data.length)
         {
             this.errormessage="username or password does not match";
         }

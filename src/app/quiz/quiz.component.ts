@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { QuizService } from '../services/quiz.service';
 import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
@@ -18,7 +17,8 @@ export class QuizComponent implements OnInit {
   quizes: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
-  quizName: string;
+  username:string;
+  quizName: string; 
   config: QuizConfig = {
     'allowBack': true,
     'allowReview': true,
@@ -49,6 +49,7 @@ export class QuizComponent implements OnInit {
 
   ngOnInit() {
     this.nav.show();
+
     this.quizes = this.quizService.getAll();
     //this.quizName = this.quizes[0].id;
     this.helperService.quizNameObs.subscribe(data=>{

@@ -1,11 +1,14 @@
 <header>
     <div class="container">
-        <a routerLink="/" class="logo">Quiz Application</a>
+        <a routerLink="/home" class="logo">Quiz Application</a>
         <nav>
             <ul>
-                <!-- <li *ngIf="nav.visible">{{userName}}</li> -->
+
+                <li *ngIf="nav.visible">Welcome {{userName}}</li>
                 <li  *ngIf="nav.visible"><a routerLink="/home">Home</a></li>
                 <li *ngIf="nav.visible"><a routerLink="/">Logout</a></li>
+
+
             </ul>
         </nav>
     </div>

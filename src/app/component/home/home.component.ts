@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   quizes: any[];
   quizName: string;
   quizId: string;
+  userName:string;
 
   constructor(private quizService: QuizService,private helperService:HelperService,private router: Router,public nav : NavbarService) { }
 

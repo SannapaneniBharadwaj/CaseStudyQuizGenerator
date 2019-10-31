@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
+import { HelperService } from 'src/app/services/helper.service';
+
 
 @Component({
   selector: 'app-nav',
@@ -8,9 +10,15 @@ import { NavbarService } from '../../services/navbar.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public nav: NavbarService) { }
 
+  constructor(private helperService: HelperService,public nav: NavbarService) { }
+  userName:string;
   ngOnInit() {
+    this.helperService.loggedUser.subscribe(data=>
+      {
+        this.userName=data;
+      })
+      console.log('username is' + this.userName);
   }
 
 }
