@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { QuizService } from '../services/quiz.service';
 import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
@@ -14,7 +13,8 @@ export class QuizComponent implements OnInit {
   quizes: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
-  quizName: string;
+  username:string;
+  quizName: string; 
   config: QuizConfig = {
     'allowBack': true,
     'allowReview': true,
@@ -44,6 +44,8 @@ export class QuizComponent implements OnInit {
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
+    //this.username=this.uname.sharedUser.username;
+   // console.log(this.uname.sharedUser.username);
     this.quizes = this.quizService.getAll();
     this.quizName = this.quizes[0].id;
     this.loadQuiz(this.quizName);
@@ -111,7 +113,6 @@ export class QuizComponent implements OnInit {
   onSubmit() {
     let answers = [];
     this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
-
     // Post your data to the server here. answers contains the questionId and the users' answer.
     console.log(this.quiz.questions);
     this.mode = 'result';

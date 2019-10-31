@@ -1,7 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Observable,BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class HelperService {
+
+    loggedUser:BehaviorSubject<string>;
+constructor(){
+this.loggedUser=new BehaviorSubject('defaultuser');
+}
+  setUserName(uname:string)
+  {
+    this.loggedUser.next(uname);
+    console.log(uname);
+  }
   static toBool(val) {
     if (val === undefined || val === null || val === '' || val === 'false' || val === 'False') {
       return false;
