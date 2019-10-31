@@ -47,7 +47,10 @@
 }
  body {
 	 font-family: 'Montserrat';
-	 font-size: 18px;
+     font-size: 18px;
+     background: url("https://image.shutterstock.com/z/stock-vector-geometric-low-poly-question-quiz-background-200928617.jpg");
+     background-size: cover;
+     background-repeat: no-repeat;
 }
  a {
 	 text-decoration: none;

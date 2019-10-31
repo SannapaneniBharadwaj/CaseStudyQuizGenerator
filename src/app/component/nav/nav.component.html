@@ -1,10 +1,9 @@
 <header>
-    <div class="container">
-        <h2 class="logo">Quiz Application</h2>
+    <div class="container">   
+            <h2 class="logo">Quiz Application</h2>
         <nav>
             <ul>
-
-                <li *ngIf="nav.visible">Welcome {{userName}}</li>
+                    <li *ngIf="nav.visible"><span>Welcome {{userName}} !</span></li>
                 <li  *ngIf="nav.visible"><a routerLink="/home">Home</a></li>
                 <li *ngIf="nav.visible"><a routerLink="/">Logout</a></li>
 

@@ -4,20 +4,16 @@
   </head>
 
   <body>
-    <div class="container">
-<div class="row">
-  <div class="col-6">
-    <h3>Quiz Application</h3>
-  </div>
-</div>
+    <div class="container" style="border: 1px solid black">
+
 <div id="quiz">
   <h2 class="text-center font-weight-normal">{{quiz.name}}</h2>
   <hr />
 
   <div *ngIf="mode=='quiz' && quiz">
     <div *ngFor="let question of filteredQuestions;">
-      <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div>
-      <div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>
+      <div class="badge badge-info css">Question {{pager.index + 1}} of {{pager.count}}.</div>
+      <div *ngIf="config.duration" class="badge badge-info float-right css">Time: {{ellapsedTime}} / {{duration}}</div>
       <h3 class="font-weight-normal">{{pager.index + 1}}.
         <span [innerHTML]="question.name"></span>
       </h3>
