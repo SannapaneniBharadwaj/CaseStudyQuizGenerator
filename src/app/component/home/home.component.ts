@@ -9,7 +9,7 @@ import { Option, Question, Quiz, QuizConfig } from '../../models/index';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [QuizService,HelperService]
+  providers: []
 })
 export class HomeComponent implements OnInit {
 
@@ -29,11 +29,12 @@ export class HomeComponent implements OnInit {
     this.quizName = quizName;
     //console.log("Selected quizId" + quizId);
     console.log("Selected Quiz Name "+quizName);
-
+    this.helperService.setQuizName(quizName);
   }
 
   goToQuiz() {
     console.log("Going to Quiz "+ this.quizName);
+    this.helperService.setQuizName(this.quizName)
     this.router.navigate(['./quiz']);
     }
   }

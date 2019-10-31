@@ -1,9 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HelperService {
   
+  quizName = 'Default Quiz';
+  quizNameObs:BehaviorSubject<string>;
+  
+  constructor(){
+    this.quizNameObs = new BehaviorSubject<string>(this.quizName);
+  }
+
+
+  setQuizName(quizNName:string){
+    //console.log(this.quizName);
+    this.quizName = quizNName;
+    this.quizNameObs = new BehaviorSubject<string>(this.quizName);
+    console.log(this.quizName);
+  }
 
   static toBool(val) {
     if (val === undefined || val === null || val === '' || val === 'false' || val === 'False') {

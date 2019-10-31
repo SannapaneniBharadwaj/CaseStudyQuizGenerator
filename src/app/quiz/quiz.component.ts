@@ -8,9 +8,11 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'],
-  providers: [QuizService]
+  providers: []
 })
 export class QuizComponent implements OnInit {
+  //attempted = 10;
+  score = 0;
   quizes: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
@@ -41,11 +43,15 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService) { }
+  constructor(private quizService: QuizService,private helperService:HelperService) { }
 
   ngOnInit() {
     this.quizes = this.quizService.getAll();
-    this.quizName = this.quizes[0].id;
+    //this.quizName = this.quizes[0].id;
+    this.helperService.quizNameObs.subscribe(data=>{
+      this.quizName = data;
+    })
+    console.log("Quiz Name is "+this.quizName);
     this.loadQuiz(this.quizName);
   }
 
@@ -111,9 +117,25 @@ export class QuizComponent implements OnInit {
   onSubmit() {
     let answers = [];
     this.quiz.questions.forEach(x => answers.push({ 'quizId': this.quiz.id, 'questionId': x.id, 'answered': x.answered }));
-
     // Post your data to the server here. answers contains the questionId and the users' answer.
     console.log(this.quiz.questions);
-    this.mode = 'result';
+
+    if (answers.length == 10){
+      this.mode = 'result';
+      for (const key in this.quiz.questions) {
+      if (this.quiz.questions.hasOwnProperty(key)) {
+      const element = this.quiz.questions[key];
+      for (const iterator of element.options) {
+      if(iterator.selected && iterator.isAnswer){
+      this.score++;
+      }
+      }
+      
+      }
+      }
+      
+      console.log('correct:', this.score, 'Incorrect:', answers.length-this.score);
+      
+      }
   }
 }

@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import data from '../../../data/userdetails.json';
 
 
-
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html'
