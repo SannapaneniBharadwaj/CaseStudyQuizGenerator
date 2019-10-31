@@ -1,0 +1,367 @@
+{
+    "id": 1,
+        "name": "HTML Quiz",
+        "description": "HTML Quiz (contains tags and general questions)",
+        "questions": [
+            {
+                "id": 1010,
+                "name": "HTML stands for?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Hyper Text Markup Language",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Hyper Text Marke up Language",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "High Text Markup Language",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Hyper Tabular Markup Language",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1011,
+                "name": "which of the following tag is used to mark a begining of paragraph ?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "<td>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "<br>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "<p>",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "<tr>",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1012,
+                "name": "Web pages starts with which of the following tag?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "<html> ",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "<body>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "<title>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "<form>",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1013,
+                "name": "The latest HTML standard is",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "html 4.0",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "xml",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "sgml",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "html 5.0",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1014,
+                "name": "Which of the following is not an empty element?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "<hr/>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "<br/>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "<p/>",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Both <hr/> and <br/>",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1015,
+                "name": "Which of the following is not a correct (X)HTML rule?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": " Attributes should be quoted",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Tags should not nest tag",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Attribute minimization is forbidden",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Unknown attributes are not ignored by the browser",
+                        "isAnswer": true
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1016,
+                "name": "Choose the incorrect escape character entity",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "&gt;",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "&#62;",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "&lt;",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "&st;",
+                        "isAnswer": true
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1017,
+                "name": "Which tag is not used if you want to indicate the importance of the phrase?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "<i>",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "<h1>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "<em>",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "<strong>",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1018,
+                "name": "Which of the following statement is true?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Attribute names must be in uppercase",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Attribute values must be quoted",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Attribute minimization is mandatory",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Attribute values should not be quoted",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1019,
+                "name": "HTML is what type of language ?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Scripting Language",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Markup Language",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Programming Language",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Network Protocol",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            }
+        ]
+    }

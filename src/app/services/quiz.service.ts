@@ -12,10 +12,10 @@ export class QuizService {
 
   getAll() {
     return [
-      { id: 'data/javascript.json', name: 'JavaScript' },
-      { id: 'data/aspnet.json', name: 'Asp.Net' },
-      { id: 'data/csharp.json', name: 'C Sharp' },
-      { id: 'data/designPatterns.json', name: 'Design Patterns' }
+      { id: 'data/html.json', name: 'HTML' },
+      { id: 'data/java.json', name: 'JAVA' },
+      { id: 'data/general.json', name: 'General' },
+      { id: 'data/javascript.json', name: 'JavaScript' }
     ];
   }
 
