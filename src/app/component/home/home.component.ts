@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
 import { HelperService } from '../../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../../models/index';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-home',
@@ -17,9 +18,10 @@ export class HomeComponent implements OnInit {
   quizName: string;
   quizId: string;
 
-  constructor(private quizService: QuizService,private helperService:HelperService,private router: Router) { }
+  constructor(private quizService: QuizService,private helperService:HelperService,private router: Router,public nav : NavbarService) { }
 
   ngOnInit() {
+    this.nav.show();
     this.quizes = this.quizService.getAll();
     this.quizName = 'None';
   }

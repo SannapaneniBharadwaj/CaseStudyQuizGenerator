@@ -2,18 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import data from '../../../data/userdetails.json';
-
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html'
 })
 export class LoginComponent {
-    constructor(private router: Router){
+    constructor(private router: Router,public nav : NavbarService){
     }
     username: string;
     password: string;
     errormessage:string;
+
+    ngOnInit() {
+        this.nav.hide();
+    }
 
     public onLoginClick()
     {
@@ -25,7 +29,7 @@ export class LoginComponent {
            // document.getElementById('errormessage').innerHTML = 'Username and password does not match';
             break;
         }
-        if(i<=data.length)
+        else
         {
             this.errormessage="username or password does not match";
         }

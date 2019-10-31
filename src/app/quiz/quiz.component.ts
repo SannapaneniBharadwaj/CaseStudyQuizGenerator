@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../services/quiz.service';
 import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-quiz',
@@ -13,6 +14,7 @@ import { Option, Question, Quiz, QuizConfig } from '../models/index';
 export class QuizComponent implements OnInit {
   //attempted = 10;
   score = 0;
+  wrong = 0;
   quizes: any[];
   quiz: Quiz = new Quiz(null);
   mode = 'quiz';
@@ -43,9 +45,10 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService,private helperService:HelperService) { }
+  constructor(private quizService: QuizService,private helperService:HelperService,public nav : NavbarService) { }
 
   ngOnInit() {
+    this.nav.show();
     this.quizes = this.quizService.getAll();
     //this.quizName = this.quizes[0].id;
     this.helperService.quizNameObs.subscribe(data=>{
@@ -135,7 +138,7 @@ export class QuizComponent implements OnInit {
       }
       
       console.log('correct:', this.score, 'Incorrect:', answers.length-this.score);
-      
+      this.wrong = answers.length-this.score;
       }
   }
 }

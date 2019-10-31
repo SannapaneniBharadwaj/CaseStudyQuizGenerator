@@ -49,7 +49,7 @@
   </div>
   <div class="result" *ngIf="mode=='result'">
     <h2>Quiz Result</h2>
-    <div *ngFor="let question of quiz.questions; let index = index">
+    <!-- <div *ngFor="let question of quiz.questions; let index = index">
       <div class="result-question">
         <h5>{{index + 1}}. {{question.name}}</h5>
         <div class="row">
@@ -59,12 +59,16 @@
         </div>
         <div class="p-1 m-2 alert {{ isCorrect(question) == 'correct'? 'alert-success': 'alert-danger'}}">Your answer is {{isCorrect(question)}}.</div>
       </div>
+    </div> -->
+    <div>
+      <h2>Number of Correct Answers : {{score}}</h2>
+      <h2>Number of Wrong Answers : {{wrong}}</h2>
     </div>
     <h4 class="alert alert-info text-center">You may close this window now.</h4>
   </div>
   <hr />
   <div *ngIf="mode!='result'">
-    <button class="btn btn-info" (click)="mode = 'review'">Review</button>
+    <!-- <button class="btn btn-info" (click)="mode = 'review'">Review</button> -->
     <button class="btn btn-primary btn-padding" (click)="onSubmit();">Submit Quiz</button>
   </div>
 </div>
