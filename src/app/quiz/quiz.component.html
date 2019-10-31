@@ -35,7 +35,7 @@
     <div class="text-center">
       
       <button class="btn btn-primary" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>
-      <button class="btn btn-primary" (click)="goTo(pager.index + 1);">Next</button>
+      <button class="btn btn-primary" *ngIf="nextButton" (click)="goTo(pager.index + 1);">Next</button>
      
       <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
     </div>
@@ -66,9 +66,9 @@
     <h4 class="alert alert-info text-center">You may close this window now.</h4>
   </div>
   <hr />
-  <div *ngIf="mode!='result'">
+  <div *ngIf="lastPage && mode!='result'"> 
     <!-- <button class="btn btn-info" (click)="mode = 'review'">Review</button> -->
-    <button class="btn btn-primary btn-padding" (click)="onSubmit();">Submit Quiz</button>
+    <button class="btn btn-primary btn-padding" (click)="onSubmit();" >Submit Quiz</button>
   </div>
 </div>
 

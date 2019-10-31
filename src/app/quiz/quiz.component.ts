@@ -13,6 +13,9 @@ import { LocationStrategy } from '@angular/common';
 })
 export class QuizComponent implements OnInit {
   //attempted = 10;
+  lastPage=false;
+  nextButton=true;
+  prevButton=true;
   score = 0;
   wrong = 0;
   quizes: any[];
@@ -115,6 +118,19 @@ export class QuizComponent implements OnInit {
     if (index >= 0 && index < this.pager.count) {
       this.pager.index = index;
       this.mode = 'quiz';
+      if(index==9)
+      {
+        this.lastPage=true;
+        this.nextButton=false;
+      }
+      else if(index==0)
+      {
+        this.prevButton=false;
+      }
+      else
+      {
+        this.lastPage=false;
+      }
     }
   }
 
