@@ -9,6 +9,7 @@
     Select Quiz:
     <select [(ngModel)]="quizName" (click)="select(quizName)">
         <!-- <option disabled selected value> -- select an option -- </option> -->
+        <!-- <option selected="selected">3</option> -->
         <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
     </select>
   </div>
