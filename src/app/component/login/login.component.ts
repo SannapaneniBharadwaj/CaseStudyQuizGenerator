@@ -4,13 +4,19 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import data from '../../../data/userdetails.json';
 import { NavbarService } from '../../services/navbar.service';
+import { LocationStrategy } from '@angular/common';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html'
 })
 export class LoginComponent {
-    constructor(private router: Router, private helperService: HelperService,public nav : NavbarService){
+    //added to disable browser back button
+    constructor(private router: Router, private helperService: HelperService,public nav : NavbarService,private location: LocationStrategy){
+        history.pushState(null, null, window.location.href);  
+        this.location.onPopState(() => {
+         history.pushState(null, null, window.location.href);
+        });  
    }
 
     username: string;

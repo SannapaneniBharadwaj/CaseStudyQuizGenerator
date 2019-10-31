@@ -3,6 +3,7 @@ import { QuizService } from '../services/quiz.service';
 import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
 import { NavbarService } from '../services/navbar.service';
+import { LocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-quiz',
@@ -45,7 +46,14 @@ export class QuizComponent implements OnInit {
   ellapsedTime = '00:00';
   duration = '';
 
-  constructor(private quizService: QuizService,private helperService:HelperService,public nav : NavbarService) { }
+  constructor(private quizService: QuizService,private helperService:HelperService,public nav : NavbarService,private location: LocationStrategy) 
+  {
+    //added to disable browser back button
+    history.pushState(null, null, window.location.href);  
+      this.location.onPopState(() => {
+      history.pushState(null, null, window.location.href);
+      }); 
+   }
 
   ngOnInit() {
     this.nav.show();
