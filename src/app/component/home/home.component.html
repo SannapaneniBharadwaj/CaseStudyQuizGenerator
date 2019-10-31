@@ -6,15 +6,16 @@
   </div> -->
 
   <div class="col-6 text-right">
-    Select Quiz:
+    <h5>Select Quiz:
     <select [(ngModel)]="quizName" (click)="select(quizName)">
         <!-- <option disabled selected value> -- select an option -- </option> -->
         <!-- <option selected="selected">3</option> -->
         <option *ngFor="let quiz of quizes" [value]="quiz.id">{{quiz.name}}</option>
     </select>
+  </h5>
   </div>
 
   <div>
-    <button class="btn btn-primary" (click)="goToQuiz();">Start Quiz</button>
+    <button class="btn btn-success" (click)="goToQuiz();">Start Quiz</button>
   </div>
   
