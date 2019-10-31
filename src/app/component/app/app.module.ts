@@ -1,3 +1,4 @@
+import { HelperService } from './../../services/helper.service';
 import { HomeComponent } from './../home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,7 +14,6 @@ import {NavComponent} from './../nav/nav.component';
 
 import {LoginComponent} from '../login/login.component';
 import { Route, RouterModule } from '@angular/router';
-import { HelperService } from 'src/app/services/helper.service';
 import { QuizService } from 'src/app/services/quiz.service';
 
 
