@@ -17,11 +17,16 @@ import { Route, RouterModule } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
 import { NavbarService } from '../../services/navbar.service';
 
+
+import { AuthGuardService as AuthGuard } from '../../auth-guard.service';
+import { AuthService } from 'src/app/auth.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+
 const ROUTES: Route[] = [
   { path: '', component: LoginComponent},
-  { path: 'home', component: HomeComponent},
-  {path:'quiz',component:QuizComponent}
-]
+  { path: 'home', component: HomeComponent,canActivate: [AuthGuard]},
+  {path:'quiz',component:QuizComponent,canActivate: [AuthGuard]}
+];
 
 @NgModule({
   declarations: [
@@ -39,7 +44,7 @@ const ROUTES: Route[] = [
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [HelperService,QuizService,,NavbarService],
+  providers: [HelperService,QuizService,,NavbarService,AuthGuard,AuthService,JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

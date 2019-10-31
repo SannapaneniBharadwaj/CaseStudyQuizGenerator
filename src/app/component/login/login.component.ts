@@ -5,12 +5,14 @@ import { Router } from '@angular/router';
 import data from '../../../data/userdetails.json';
 import { NavbarService } from '../../services/navbar.service';
 import { LocationStrategy } from '@angular/common';
+import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html'
 })
 export class LoginComponent {
+    form: FormGroup;
     //added to disable browser back button
     constructor(private router: Router, private helperService: HelperService,public nav : NavbarService,private location: LocationStrategy){
         history.pushState(null, null, window.location.href);  
@@ -46,4 +48,6 @@ export class LoginComponent {
 
         }   
     }
+
+
 }

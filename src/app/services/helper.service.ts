@@ -6,13 +6,13 @@ import { Observable,BehaviorSubject } from 'rxjs';
 })
 export class HelperService {
   
-  quizName = 'Default Quiz';
+  quizName = 'None';
   quizNameObs:BehaviorSubject<string>;
   loggedUser:BehaviorSubject<string>;
   
   constructor(){
     this.quizNameObs = new BehaviorSubject<string>(this.quizName);
-    this.loggedUser=new BehaviorSubject('defaultuser');
+    this.loggedUser=new BehaviorSubject('None');
   }
 
   setQuizName(quizNName:string){
